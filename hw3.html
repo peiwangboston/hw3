@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> letter guess game</title>
+</head>
+<body>
+<script>
+	
+var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+var guesswin = 0;
+var compuletter = letters[Math.floor(Math.random()*letters.length)];
+
+	console.log (compuletter);
+	
+
+
+	for (i = 0; i < 7; i++) {
+		prompt ('please pick a letter from a to z');
+		document.onkeypress = function(event) {
+			var guessletter = charCode (event.keyCode || event.charcode);
+			console.log (guessletter);
+			}
+		
+	if ( ("String.fromCharcode(guessletter") === compuletter) {
+		alert ("you have guessed right")
+		guesswin++;
+		}else{
+		alert("you have guessed wrong, try again")
+		}
+	}
+
+
+	
+document.write("game over")
+document.write("your score is:" +guesswin)
+	
+	
+</script>
+</body>
+</html>
